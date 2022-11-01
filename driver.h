@@ -3,33 +3,33 @@
 #include "person.h"
 using namespace std;
 
-class Taxi_Driver:public Person
+class Driver:Person
 {
 public:
-    int salary;
-    int age;
-    string IDNP;
+    string drivers[4] = {"Tom", "Iulius", "Andrei","Dany"};
 
-    Taxi_Driver(string t_name, string t_forename, string t_phone_number, int t_age, string t_IDNP)
-    {
-    	name = t_name;
-        forename = t_forename;
-        phone_number = t_phone_number;
-        age = t_age;
-        IDNP = t_IDNP;
+    void get_the_command(int n){
+        cout << drivers[n] << " get the command" << endl;
     }
 
-    void drive()
+    void drive() override
     {
-    	cout << "Hello, it's " << forename << " I will get this ride !" << endl; 
+    	cout << "Drive the car" << endl;
+    }
+    
+    void arrive() override
+    {
+    	cout << "Arrived at the destination" << endl;
     }
 
-    float rank(float value) override{
-       rank_val = value - 0;
-       return rank_val;
-    };
+    void wait_customer() override
+    {
+        cout << "Waiting the customer" << endl;
+    }
 
-    void info() override{
-        cout << "The driver is the person who takes the client from point A to point B safely and comfortably !" << endl;
+    void get_money_from_customer() override
+    {
+        cout << "Driver gets the money from the customer" << endl;
     }
 };
+

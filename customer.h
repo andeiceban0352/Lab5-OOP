@@ -1,30 +1,32 @@
 #pragma once
-#include "iostream"
 #include "person.h"
 using namespace std;
 
 class Customer:public Person
 {
 public:
-
-    Customer(string c_name, string c_forename, string c_phone_number)
+    string customers[30] = {"Tom", "Iulius", "Andrei","Dany","Noah","Amelia","Oliver","Olivia","GeorgeIsla","Leo","Ava","Theo","Freya","Arthur","Mia","Freddie","Willow","Harry","Evie","Charliem","Lilly", "Jack", "Grace" };
+    void get_in_the_car(int val) override
     {
-    	name = c_name;
-        forename = c_forename;
-        phone_number = c_phone_number;
+        cout << customers[val] <<  " get in the car" << endl;
     }
 
-    void customer_request()
+    void get_out_from_car() override
     {
-    	cout << "Hello my name is " << forename << ". I would want ...." << endl ;
+        cout << "Customer get out from the car" << endl;
     }
 
-    float rank(float value) override{
-        rank_val = value - 1;
-        return rank_val;
-    };
+    void pay_for_ride()override
+    {
+        cout << "Customer pay for the ride" << endl;
+    }
 
-    void info() override{
-        cout << "Customers are very important in our company because they are the source of income !" << endl;
+    void check_ride(string val){
+        if(val == "false"){
+            cout << "Customer cancel the ride" << endl;
+        }else{
+            cout << "Customer get the ride" << endl;
+        }
     }
 };
+

@@ -7,31 +7,20 @@ using namespace std;
 class Operator:public Person
 {
 public:
+    Operator(){
+        name = "Jasmine";
+        age = 34;
+    }
 
-    int salary;
-    int age;
-    string IDNP;
-
-    Operator(string o_name, string o_forename, string o_phone_number, int o_age, string o_IDNP)
+    void get_the_request() override
     {
-    	name = o_name;
-        forename = o_forename;
-        phone_number = o_phone_number;
-        age = o_age;
-        IDNP = o_IDNP;
+        cout << name << " just got the request" << endl;
     }
 
-    void get_the_request()
+    void assign_request_to_drivers() override
     {
-    	cout << "This is " << forename << " i just got a new request " << endl; 
+        cout << name << " assigned the request to one of the drivers " << endl;
     }
 
-    float rank(float value) override{
-        rank_val = value - 2;
-        return rank_val;
-    };
-
-    void info() override{
-        cout << "The operator is the person who receives all the calls and makes reservations for customers !" << endl;
-    }
 };
+
